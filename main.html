@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>💙 Realistic Vending Machine 💚</title>
+  <style>
+    body {
+      font-family: 'Arial Rounded MT', sans-serif;
+      background: linear-gradient(135deg, #66ccff, #e0f7ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2em;
+      text-shadow: 0 0 10px rgba(0,0,0,0.3);
+      color: #004080;
+      margin-bottom: 15px;
+    }
+
+    .machine {
+      width: 450px;
+      height: 700px;
+      background: #fff; /* White body */
+      border-radius: 25px;
+      border: 8px solid #0059b3; /* Blue corners effect */
+      box-shadow: 0 0 30px rgba(0,153,255,0.4), 0 0 60px rgba(102,204,255,0.3);
+      position: relative;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Glass Display */
+    .display {
+      background: rgba(0, 102, 204, 0.1); /* Slight blue glass effect */
+      border: 3px solid #3399ff;
+      border-radius: 15px;
+      height: 380px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      padding: 10px;
+      box-shadow: inset 0 0 15px rgba(0,0,0,0.2), 0 5px 10px rgba(0,153,255,0.2);
+      overflow-y: auto; /* Scroll if too many items */
+    }
+
+    .item {
+      background: linear-gradient(145deg, #3399ff, #66ccff);
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+    }
+
+    .item:hover {
+      background: linear-gradient(145deg, #66ccff, #99ddff);
+      transform: translateY(-6px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+    }
+
+    /* Control Panel */
+    .panel {
+      background: #003366;
+      margin-top: 15px;
+      padding: 15px;
+      border-radius: 12px;
+      color: #cce6ff;
+      font-family: "Courier New", monospace;
+      box-shadow: inset 0 0 12px #000;
+      width: 90%;
+      text-align: left;
+    }
+
+    .panel p {
+      margin: 6px 0;
+    }
+
+    /* Money Buttons */
+    .money-buttons {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .money-buttons button, .change-btn {
+      margin: 5px;
+      padding: 12px 18px;
+      font-size: 1em;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    /* Green buttons */
+    .money-buttons button {
+      background: linear-gradient(145deg, #4caf50, #66bb6a);
+      color: #fff;
+      box-shadow: 0 0 10px #80e27e;
+    }
+
+    .money-buttons button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #a5d6a7;
+    }
+
+    .change-btn {
+      background: #388e3c;
+      color: white;
+      width: 95%;
+      margin-top: 10px;
+      box-shadow: 0 0 8px #66bb6a;
+    }
+
+    .change-btn:hover {
+      background: #4caf50;
+    }
+
+    /* Money Slot */
+    .slot {
+      width: 200px;
+      height: 20px;
+      background: #003366;
+      margin: 15px auto 0;
+      border-radius: 4px;
+      box-shadow: inset 0 2px 5px #000;
+    }
+
+    /* Dispense Compartment */
+    .compartment {
+      margin-top: 15px;
+      width: 95%;
+      height: 60px;
+      background: #001f4d;
+      border-radius: 8px;
+      box-shadow: inset 0 4px 10px rgba(0,0,0,0.6);
+      text-align: center;
+      color: #fff;
+      line-height: 60px;
+      font-size: 1em;
+      border: 2px solid #3399ff;
+    }
+
+    /* Coin animation */
+    .coin {
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #ffeb3b, #bfa600);
+      border: 2px solid #d4af37;
+      animation: drop 1s ease-in forwards;
+      z-index: 10;
+    }
+
+    @keyframes drop {
+      from { top: 0; opacity: 1; }
+      to { top: 90%; opacity: 0; }
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>💙 Realistic Vending Machine 💚</h1>
+
+  <div class="machine">
+    <div class="display">
+      <div class="item" onclick="buyItem('Soda', 35)">🥤 Soda<br>NT$35</div>
+      <div class="item" onclick="buyItem('Chips', 25)">🍟 Chips<br>NT$25</div>
+      <div class="item" onclick="buyItem('Candy', 20)">🍬 Candy<br>NT$20</div>
+      <div class="item" onclick="buyItem('Water', 20)">💧 Water<br>NT$20</div>
+      <div class="item" onclick="buyItem('Chocolate', 30)">🍫 Chocolate<br>NT$30</div>
+      <div class="item" onclick="buyItem('Cookies', 28)">🍪 Cookies<br>NT$28</div>
+      <div class="item" onclick="buyItem('Juice', 40)">🧃 Juice<br>NT$40</div>
+      <div class="item" onclick="buyItem('Instant Noodles', 50)">🍜 Noodles<br>NT$50</div>
+    </div>
+
+    <div class="panel">
+      <p>💰 Balance: NT$<span id="balance">0.00</span></p>
+      <p id="message">Insert money to begin.</p>
+    </div>
+
+    <div class="money-buttons">
+      <button onclick="addMoney(1)">NT$1</button>
+      <button onclick="addMoney(5)">NT$5</button>
+      <button onclick="addMoney(10)">NT$10</button>
+      <button onclick="addMoney(50)">NT$50</button>
+      <button onclick="addMoney(100)">NT$100</button>
+      <button onclick="addMoney(500)">NT$500</button>
+      <button onclick="addMoney(1000)">NT$1000</button>
+    </div>
+
+    <button class="change-btn" onclick="returnChange()">Return Change</button>
+
+    <div class="compartment" id="compartment">⬆ Take your item or change here</div>
+  </div>
+</div>
+
+<script>
+let balance = 0;
+
+function updateBalance() {
+  document.getElementById('balance').innerText = balance.toFixed(2);
+}
+
+function showMessage(msg) {
+  document.getElementById('message').textContent = msg;
+}
+
+function addMoney(amount) {
+  balance += amount;
+  updateBalance();
+  showMessage(`You inserted NT$${amount.toFixed(2)}`);
+}
+
+function buyItem(itemName, itemPrice) {
+  if (balance >= itemPrice) {
+    balance -= itemPrice;
+    updateBalance();
+    showMessage(`You bought ${itemName}!`);
+    document.getElementById('compartment').textContent = `🎁 You got ${itemName}!`;
+  } else {
+    showMessage(`Not enough money for ${itemName}.`);
+  }
+}
+
+function returnChange() {
+  if (balance > 0) {
+    const change = balance;
+    showMessage(`Returned NT$${change.toFixed(2)} in change.`);
+    dropCoins();
+    balance = 0;
+    updateBalance();
+    document.getElementById('compartment').textContent = `💰 You received NT$${change.toFixed(2)} in change.`;
+  } else {
+    showMessage("No change to return.");
+  }
+}
+
+function dropCoins() {
+  for (let i = 0; i < 6; i++) {
+    const coin = document.createElement('div');
+    coin.classList.add('coin');
+    coin.style.left = Math.random() * 80 + '%';
+    document.querySelector('.machine').appendChild(coin);
+    setTimeout(() => coin.remove(), 1000);
+  }
+}
+</script>
+
+</body>
+</html>
