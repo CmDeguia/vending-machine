@@ -6,7 +6,7 @@
   <style>
     body {
       font-family: 'Arial Rounded MT', sans-serif;
-      background: linear-gradient(135deg, #3ccff, #e0f7ff);
+      background: linear-gradient(135deg, #6ccff, #e0f7ff);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -36,7 +36,7 @@
       height: 88vh; /* increased height */
       background: #fff;
       border-radius: 25px;
-      border: 3px solid #0059b3;
+      border: 6px solid #0059b3;
       box-shadow: 0 0 25px rgba(0,153,255,0.4), 0 0 40px rgba(102,204,255,0.3);
       display: flex;
       flex-direction: column;
@@ -60,9 +60,9 @@
     }
 
     .item {
-      background: linear-gradient(145deg, #3399ff, #3ccff);
+      background: linear-gradient(145deg, #3399ff, #6ccff);
       border-radius: 10px;
-      box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -77,15 +77,15 @@
     }
 
     .item:hover {
-      background: linear-gradient(145deg, #3ccff, #99ddff);
+      background: linear-gradient(145deg, #6ccff, #99ddff);
       transform: translateY(-4px);
     }
 
     .panel {
-      background: #00333;
+      background: #00336;
       padding: 10px;
       border-radius: 10px;
-      color: #cce3ff;
+      color: #cce6ff;
       font-family: "Courier New", monospace;
       box-shadow: inset 0 0 8px #000;
       width: 90%;
@@ -98,7 +98,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 3px;
+      gap: 6px;
       margin-top: 10px;
     }
 
@@ -113,14 +113,14 @@
     }
 
     .money-buttons button {
-      background: linear-gradient(145deg, #4caf50, #3bb3a);
+      background: linear-gradient(145deg, #4caf50, #6bb6a);
       color: white;
       box-shadow: 0 0 8px #80e27e;
     }
 
     .money-buttons button:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 12px #a5d3a7;
+      box-shadow: 0 0 12px #a5d6a7;
     }
 
     .change-btn {
@@ -128,7 +128,7 @@
       color: white;
       width: 90%;
       margin-top: 12px;
-      box-shadow: 0 0 3px #3bb3a;
+      box-shadow: 0 0 6px #6bb6a;
     }
 
     .change-btn:hover {
@@ -141,7 +141,7 @@
       height: 50px; /* slightly taller */
       background: #001f4d;
       border-radius: 8px;
-      box-shadow: inset 0 3px 8px rgba(0,0,0,0.3);
+      box-shadow: inset 0 3px 8px rgba(0,0,0,0.6);
       text-align: center;
       color: #fff;
       line-height: 50px;
@@ -165,7 +165,7 @@
       width: 30px;
       height: 30px;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #ffeb3b, #bfa300);
+      background: radial-gradient(circle at 30% 30%, #ffeb3b, #bfa600);
       border: 2px solid #d4af37;
       animation: drop 1s ease-in forwards;
       z-index: 10;
@@ -185,13 +185,13 @@
   <div class="machine">
     <div class="display">
       <div class="item" onclick="buyItem('Soda', 35)"><img style="height:30px ; width: 30px;" src="image.png"> Soda<br>NT$35</div>
-      <div class="item" onclick="buyItem('Chips', 25)"><img style="height:30px ; width: 30px;" src="snack.png">snacks Chips<br>NT$25</div>
-      <div class="item" onclick="buyItem('Candy', 20)"><img style="height:30px ; width: 30px;" src="candy.png">🍬 Candy<br>NT$20</div>
-      <div class="item" onclick="buyItem('Water', 20)"><img style="height:30px ; width: 30px;" src="water-bottle.png">💧 Water<br>NT$20</div>
-      <div class="item" onclick="buyItem('Chocolate', 30)"><img style="height:30px ; width: 30px;" src="chocolate-bar.png">🍫 Chocolate<br>NT$30</div>
-      <div class="item" onclick="buyItem('Cookies', 28)"><img style="height:30px ; width: 30px;" src="cookies.png">🍪 Cookies<br>NT$28</div>
-      <div class="item" onclick="buyItem('Juice', 40)"><img style="height:30px ; width: 30px;" src="juice-box.png">🧃 Juice<br>NT$40</div>
-      <div class="item" onclick="buyItem('Instant Noodles', 50)"><img style="height:30px ; width: 30px;" src="noodles.png">🍜 Noodles<br>NT$50</div>
+      <div class="item" onclick="buyItem('Chips', 25)"><img style="height:30px ; width: 60px;" src="snack.png">snacks Chips<br>NT$25</div>
+      <div class="item" onclick="buyItem('Candy', 20)"><img style="height:60px ; width: 60px;" src="candy.png">🍬 Candy<br>NT$20</div>
+      <div class="item" onclick="buyItem('Water', 20)"><img style="height:60px ; width: 60px;" src="water-bottle.png">💧 Water<br>NT$20</div>
+      <div class="item" onclick="buyItem('Chocolate', 30)"><img style="height:60px ; width: 60px;" src="chocolate-bar.png">🍫 Chocolate<br>NT$30</div>
+      <div class="item" onclick="buyItem('Cookies', 28)"><img style="height:60px ; width: 60px;" src="cookies.png">🍪 Cookies<br>NT$28</div>
+      <div class="item" onclick="buyItem('Juice', 40)"><img style="height:60px ; width: 60px;" src="juice-box.png">🧃 Juice<br>NT$40</div>
+      <div class="item" onclick="buyItem('Instant Noodles', 50)"><img style="height:60px ; width: 60px;" src="noodles.png">🍜 Noodles<br>NT$50</div>
     </div>
 
     <div class="panel">
@@ -258,7 +258,7 @@ function returnChange() {
 }
 
 function dropCoins() {
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 6; i++) {
     const coin = document.createElement('div');
     coin.classList.add('coin');
     coin.style.left = Math.random() * 80 + '%';
