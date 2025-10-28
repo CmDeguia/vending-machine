@@ -31,9 +31,9 @@
     }
 
     .machine {
-      width: 420px;
+      width: 430px;
       max-width: 90vw;
-      height: 85vh;
+      height: 88vh; /* increased height */
       background: #fff;
       border-radius: 25px;
       border: 6px solid #0059b3;
@@ -41,8 +41,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      padding: 15px;
+      justify-content: flex-start;
+      padding: 18px 15px 25px; /* added bottom padding */
       position: relative;
     }
 
@@ -51,13 +51,11 @@
       background: rgba(0, 102, 204, 0.1);
       border: 3px solid #3399ff;
       border-radius: 15px;
-      flex-grow: 1;
       width: 100%;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
       padding: 10px;
-      overflow-y: auto;
       box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
     }
 
@@ -93,14 +91,15 @@
       width: 90%;
       text-align: left;
       font-size: 0.9em;
+      margin-top: 10px;
     }
 
     .money-buttons {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 5px;
-      margin-top: 8px;
+      gap: 6px;
+      margin-top: 10px;
     }
 
     .money-buttons button, .change-btn {
@@ -128,7 +127,7 @@
       background: #388e3c;
       color: white;
       width: 90%;
-      margin-top: 10px;
+      margin-top: 12px;
       box-shadow: 0 0 6px #66bb6a;
     }
 
@@ -137,15 +136,15 @@
     }
 
     .compartment {
-      margin-top: 10px;
+      margin-top: 12px;
       width: 90%;
-      height: 45px;
+      height: 50px; /* slightly taller */
       background: #001f4d;
       border-radius: 8px;
       box-shadow: inset 0 3px 8px rgba(0,0,0,0.6);
       text-align: center;
       color: #fff;
-      line-height: 45px;
+      line-height: 50px;
       font-size: 0.9em;
       border: 2px solid #3399ff;
     }
@@ -155,9 +154,9 @@
       font-size: 0.85em;
       color: #004080;
       text-align: center;
-      margin-top: 5px;
+      margin-top: 8px;
       font-weight: bold;
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
     /* Coin Animation */
@@ -211,9 +210,8 @@
     </div>
 
     <button class="change-btn" onclick="returnChange()">Return Change</button>
-    <div class="compartment" id="compartment">⬆ Take your item or change here</div>
 
-    <!-- Copyright inside, below compartment -->
+    <div class="compartment" id="compartment">⬆ Take your item or change here</div>
     <div class="copyright">© 2025 貝水晶</div>
   </div>
 </div>
