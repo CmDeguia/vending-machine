@@ -43,6 +43,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 15px;
+      position: relative;
     }
 
     /* Display Section */
@@ -149,6 +150,16 @@
       border: 2px solid #3399ff;
     }
 
+    /* Copyright inside the vending machine */
+    .machine footer {
+      position: absolute;
+      bottom: 8px;
+      font-size: 0.85em;
+      color: #004080;
+      text-align: center;
+      width: 100%;
+    }
+
     /* Coin Animation */
     .coin {
       position: absolute;
@@ -164,16 +175,6 @@
     @keyframes drop {
       from { top: 0; opacity: 1; }
       to { top: 90%; opacity: 0; }
-    }
-
-    /* Footer with Chinese Name */
-    footer {
-      font-size: 0.9em;
-      color: #004080;
-      text-align: center;
-      padding: 8px 0;
-      width: 100%;
-      margin-top: 8px;
     }
   </style>
 </head>
@@ -211,11 +212,10 @@
 
     <button class="change-btn" onclick="returnChange()">Return Change</button>
     <div class="compartment" id="compartment">⬆ Take your item or change here</div>
-  </div>
 
-  <footer>
-    © 2025 Created by Cristal Mae Deguia 水晶貝 🌸
-  </footer>
+    <!-- Copyright inside the vending machine -->
+    <footer>© 2025 貝水晶</footer>
+  </div>
 </div>
 
 <script>
