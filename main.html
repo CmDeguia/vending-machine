@@ -11,7 +11,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      height: 100vh;
       margin: 0;
     }
 
@@ -19,121 +19,116 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      flex-grow: 1;
+      width: 100%;
+      height: 100%;
     }
 
     h1 {
-      font-size: 2em;
+      font-size: 1.8em;
       text-shadow: 0 0 10px rgba(0,0,0,0.3);
       color: #004080;
-      margin-bottom: 15px;
+      margin: 10px 0;
     }
 
     .machine {
-      width: 450px;
-      max-width: 95vw;
+      width: 420px;
+      max-width: 90vw;
+      height: 85vh;
       background: #fff;
       border-radius: 25px;
-      border: 8px solid #0059b3;
-      box-shadow: 0 0 30px rgba(0,153,255,0.4), 0 0 60px rgba(102,204,255,0.3);
-      position: relative;
-      padding: 20px;
+      border: 6px solid #0059b3;
+      box-shadow: 0 0 25px rgba(0,153,255,0.4), 0 0 40px rgba(102,204,255,0.3);
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 40px;
+      justify-content: space-between;
+      padding: 15px;
     }
 
-    /* Glass Display */
+    /* Display Section */
     .display {
       background: rgba(0, 102, 204, 0.1);
       border: 3px solid #3399ff;
       border-radius: 15px;
+      flex-grow: 1;
       width: 100%;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+      gap: 10px;
       padding: 10px;
-      box-shadow: inset 0 0 15px rgba(0,0,0,0.2), 0 5px 10px rgba(0,153,255,0.2);
       overflow-y: auto;
-      max-height: 50vh; /* automatically adjust height to screen */
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
     }
 
     .item {
       background: linear-gradient(145deg, #3399ff, #66ccff);
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 15px;
+      padding: 10px;
       cursor: pointer;
-      transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
+      transition: transform 0.2s, background 0.3s;
       font-weight: bold;
       color: #fff;
       text-align: center;
+      font-size: 0.95em;
     }
 
     .item:hover {
       background: linear-gradient(145deg, #66ccff, #99ddff);
-      transform: translateY(-6px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+      transform: translateY(-4px);
     }
 
-    /* Panel */
     .panel {
       background: #003366;
-      margin-top: 15px;
-      padding: 15px;
-      border-radius: 12px;
+      padding: 10px;
+      border-radius: 10px;
       color: #cce6ff;
       font-family: "Courier New", monospace;
-      box-shadow: inset 0 0 12px #000;
+      box-shadow: inset 0 0 8px #000;
       width: 90%;
       text-align: left;
+      font-size: 0.9em;
     }
 
-    .panel p {
-      margin: 6px 0;
-    }
-
-    /* Money Buttons */
     .money-buttons {
-      margin-top: 10px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 5px;
+      margin-top: 8px;
     }
 
     .money-buttons button, .change-btn {
-      margin: 5px;
-      padding: 12px 18px;
-      font-size: 1em;
-      border-radius: 10px;
+      padding: 8px 14px;
+      font-size: 0.95em;
+      border-radius: 8px;
       border: none;
       cursor: pointer;
-      transition: 0.3s;
       font-weight: bold;
+      transition: 0.3s;
     }
 
     .money-buttons button {
       background: linear-gradient(145deg, #4caf50, #66bb6a);
-      color: #fff;
-      box-shadow: 0 0 10px #80e27e;
+      color: white;
+      box-shadow: 0 0 8px #80e27e;
     }
 
     .money-buttons button:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 15px #a5d6a7;
+      box-shadow: 0 0 12px #a5d6a7;
     }
 
     .change-btn {
       background: #388e3c;
       color: white;
-      width: 95%;
+      width: 90%;
       margin-top: 10px;
-      box-shadow: 0 0 8px #66bb6a;
+      box-shadow: 0 0 6px #66bb6a;
     }
 
     .change-btn:hover {
@@ -141,24 +136,24 @@
     }
 
     .compartment {
-      margin-top: 15px;
-      width: 95%;
-      height: 60px;
+      margin-top: 10px;
+      width: 90%;
+      height: 45px;
       background: #001f4d;
       border-radius: 8px;
-      box-shadow: inset 0 4px 10px rgba(0,0,0,0.6);
+      box-shadow: inset 0 3px 8px rgba(0,0,0,0.6);
       text-align: center;
       color: #fff;
-      line-height: 60px;
-      font-size: 1em;
+      line-height: 45px;
+      font-size: 0.9em;
       border: 2px solid #3399ff;
     }
 
-    /* Coin animation */
+    /* Coin Animation */
     .coin {
       position: absolute;
-      width: 35px;
-      height: 35px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       background: radial-gradient(circle at 30% 30%, #ffeb3b, #bfa600);
       border: 2px solid #d4af37;
@@ -171,15 +166,14 @@
       to { top: 90%; opacity: 0; }
     }
 
-    /* Footer Ownership */
+    /* Footer with Chinese Name */
     footer {
       font-size: 0.9em;
       color: #004080;
-      background: transparent;
       text-align: center;
-      padding: 10px;
+      padding: 8px 0;
       width: 100%;
-      position: relative;
+      margin-top: 8px;
     }
   </style>
 </head>
@@ -218,11 +212,11 @@
     <button class="change-btn" onclick="returnChange()">Return Change</button>
     <div class="compartment" id="compartment">⬆ Take your item or change here</div>
   </div>
-</div>
 
-<footer>
-  © 2025 Created by Cristal Mae Deguia 🌸
-</footer>
+  <footer>
+    © 2025 Created by Cristal Mae Deguia 水晶貝 🌸
+  </footer>
+</div>
 
 <script>
 let balance = 0;
