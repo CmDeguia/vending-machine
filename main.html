@@ -150,14 +150,14 @@
       border: 2px solid #3399ff;
     }
 
-    /* Copyright inside the vending machine */
-    .machine footer {
-      position: absolute;
-      bottom: 8px;
+    /* Copyright directly below the compartment */
+    .copyright {
       font-size: 0.85em;
       color: #004080;
       text-align: center;
-      width: 100%;
+      margin-top: 5px;
+      font-weight: bold;
+      opacity: 0.8;
     }
 
     /* Coin Animation */
@@ -213,8 +213,8 @@
     <button class="change-btn" onclick="returnChange()">Return Change</button>
     <div class="compartment" id="compartment">⬆ Take your item or change here</div>
 
-    <!-- Copyright inside the vending machine -->
-    <footer>© 2025 貝水晶</footer>
+    <!-- Copyright inside, below compartment -->
+    <div class="copyright">© 2025 貝水晶</div>
   </div>
 </div>
 
